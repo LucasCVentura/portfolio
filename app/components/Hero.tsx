@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#020b18]/60 via-[#020b18]/30 to-[#020b18]/70 pointer-events-none" />
 
       {/* Content — full width, centered */}
-      <div className="relative z-10 px-8 max-w-4xl w-full mx-auto">
+      <div className="relative z-10 px-6 md:px-8 max-w-4xl w-full mx-auto">
         <motion.p {...fade(0.2)} className="text-[10px] tracking-[5px] uppercase text-[var(--water3)] mb-4">
           Full Stack Developer · Pleno · Node.js · React · TypeScript
         </motion.p>

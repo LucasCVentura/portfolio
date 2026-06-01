@@ -89,7 +89,7 @@ function ProjectCard({ p, delay }: { p: typeof projects[0]; delay: number }) {
       viewport={{ once: true }}
       transition={{ duration: 0.55, delay }}
       whileHover={{ y: -4 }}
-      className={`bg-[var(--surface)] border border-[var(--border)] p-8 relative overflow-hidden group transition-all duration-300 hover:border-[rgba(0,180,216,.3)] hover:shadow-[0_20px_60px_rgba(0,0,0,.4),0_0_40px_rgba(0,180,216,.05)] ${p.wide ? "col-span-2 grid grid-cols-2 gap-12 items-center" : ""}`}
+      className={`bg-[var(--surface)] border border-[var(--border)] p-8 relative overflow-hidden group transition-all duration-300 hover:border-[rgba(0,180,216,.3)] hover:shadow-[0_20px_60px_rgba(0,0,0,.4),0_0_40px_rgba(0,180,216,.05)] ${p.wide ? "md:col-span-2 md:grid md:grid-cols-2 md:gap-12 md:items-center" : ""}`}
     >
       {/* Top shimmer on hover */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--water2)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -145,7 +145,7 @@ function ProjectCard({ p, delay }: { p: typeof projects[0]; delay: number }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-28 px-16 bg-[var(--deep)]">
+    <section id="projects" className="py-20 md:py-28 px-6 md:px-16 bg-[var(--deep)]">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -158,7 +158,7 @@ export default function Projects() {
           <div className="flex-1 h-px bg-gradient-to-r from-[rgba(0,180,216,.4)] to-transparent" />
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {projects.map((p, i) => <ProjectCard key={p.name} p={p} delay={i * 0.1} />)}
         </div>
       </div>

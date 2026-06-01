@@ -39,7 +39,7 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-28 px-16 bg-[var(--navy)]">
+    <section id="about" className="py-20 md:py-28 px-6 md:px-16 bg-[var(--navy)]">
       <div className="max-w-5xl mx-auto">
         <motion.div
           ref={ref}
@@ -53,7 +53,7 @@ export default function About() {
           <div className="flex-1 h-px bg-gradient-to-r from-[rgba(0,180,216,.4)] to-transparent" />
         </motion.div>
 
-        <div className="grid grid-cols-[1.2fr_1fr] gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-10 md:gap-20 items-center">
           <div className="space-y-5">
             {[
               <>Comecei como estagiário na <strong className="text-[var(--text)]">Medilab Sistemas</strong> em 2021 e cresci entregando sistemas clínicos de alta complexidade — teleconsulta em tempo real, integrações com convênios via <span className="text-[var(--water3)]">TISS/TUSS</span> e API unificada para múltiplos sistemas PACS.</>,

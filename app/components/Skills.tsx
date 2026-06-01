@@ -13,7 +13,7 @@ const groups = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-28 px-16 bg-[var(--navy)]">
+    <section id="skills" className="py-20 md:py-28 px-6 md:px-16 bg-[var(--navy)]">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ export default function Skills() {
           <div className="flex-1 h-px bg-gradient-to-r from-[rgba(0,180,216,.4)] to-transparent" />
         </motion.div>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {groups.map((g, i) => (
             <motion.div
               key={g.name}
