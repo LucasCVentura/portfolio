@@ -36,6 +36,36 @@ const projects = [
   },
   {
     eyebrow: "Cliente · Etech",
+    name: "Dashboard CBTEA",
+    desc: "Dashboard administrativo com métricas e indicadores para gestão interna da CBTEA, consumindo API própria.",
+    bullets: [
+      "Visualização de métricas e indicadores em tempo real",
+      "Interface construída com Mantine UI e React Query",
+      "API backend com Fastify e TypeScript",
+    ],
+    tags: ["React","TypeScript","React Query","Mantine","Fastify","PostgreSQL"],
+    link: null,
+    linkLabel: null,
+    badge: null,
+    wide: false,
+  },
+  {
+    eyebrow: "Cliente · Top Diagnóstico",
+    name: "Dashboard Top Diagnóstico",
+    desc: "Dashboard de gestão para clínica de diagnóstico por imagem com múltiplas métricas operacionais e financeiras.",
+    bullets: [
+      "Painéis com indicadores de produção, faturamento e agenda",
+      "Filtros por período, modalidade e profissional",
+      "API REST com Fastify, TypeScript e PostgreSQL",
+    ],
+    tags: ["React","TypeScript","React Query","Mantine","Fastify","PostgreSQL"],
+    link: null,
+    linkLabel: null,
+    badge: null,
+    wide: false,
+  },
+  {
+    eyebrow: "Cliente · Etech",
     name: "App CBTEA",
     desc: "App mobile para facilitar o cuidado com a saúde de famílias com TEA, desenvolvido para a CBTEA.",
     bullets: [
