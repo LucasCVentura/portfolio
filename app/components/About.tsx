@@ -57,7 +57,7 @@ export default function About() {
           <div className="space-y-5">
             {[
               <>Comecei como estagiário na <strong className="text-[var(--text)]">Medilab Sistemas</strong> em 2021 e cresci entregando sistemas clínicos de alta complexidade — teleconsulta em tempo real, integrações com convênios via <span className="text-[var(--water3)]">TISS/TUSS</span> e API unificada para múltiplos sistemas PACS.</>,
-              <>Em 2025 fui solo e fundei dois produtos em produção: a <span className="text-[var(--water3)]">Saudy Gestão</span> (RIS/PACS para clínicas de imagem, liderado em equipe) e a <span className="text-[var(--water3)]">Kira</span> (gestão para clínicas de estética). Ambos com usuários reais e URLs ativas.</>,
+              <>Em 2026 lancei dois produtos próprios: a <span className="text-[var(--water3)]">Kira</span> (gestão para clínicas de estética), já com usuários ativos, e a <span className="text-[var(--water3)]">Saudy Gestão</span> (RIS/PACS para clínicas de imagem), liderado em equipe e em fase final de captação dos primeiros clientes.</>,
               <>Trabalho <strong className="text-[var(--text)]">full cycle</strong> — do levantamento de requisitos ao deploy em produção. Uso IA ativamente no fluxo de desenvolvimento para entregar mais, com mais qualidade.</>,
             ].map((text, i) => (
               <motion.p
