@@ -2,10 +2,12 @@
 import { motion } from "framer-motion";
 import WaterCanvas from "./WaterCanvas";
 
+import type { Transition } from "framer-motion";
+
 const fade = (delay: number) => ({
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, delay, ease: "easeOut" },
+  transition: { duration: 0.6, delay, ease: "easeOut" } as Transition,
 });
 
 export default function Hero() {
