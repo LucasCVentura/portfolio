@@ -10,10 +10,10 @@ const projects = [
     bullets: [
       "Arquitetura multi-tenant com isolamento completo por clínica",
       "Autenticação facial para controle de acesso a laudos sensíveis",
-      "CI/CD automatizado com deploy no Google Cloud Run via GitHub Actions",
+      "CI/CD automatizado com deploy no Render via GitHub Actions",
       "Painel de BI com indicadores de produção e faturamento",
     ],
-    tags: ["Next.js","Node.js","TypeScript","PostgreSQL","GCP","DICOM","CI/CD","Multi-tenant"],
+    tags: ["Next.js","Node.js","TypeScript","PostgreSQL","GCP","DICOM","Render","Multi-tenant"],
     link: "https://saudygestao.com.br",
     linkLabel: "saudygestao.com.br",
     badge: "Em produção",
@@ -37,7 +37,7 @@ const projects = [
   {
     eyebrow: "Cliente · Etech",
     name: "App CBTEA",
-    desc: "App mobile para facilitar o cuidado com a saúde de famílias com TEA, desenvolvido para a Confederação Brasileira de Autismo.",
+    desc: "App mobile para facilitar o cuidado com a saúde de famílias com TEA, desenvolvido para a CBTEA.",
     bullets: [
       "Cadastro com validação de CPF e aceite de biometria",
       "Login seguro integrado ao backend",
