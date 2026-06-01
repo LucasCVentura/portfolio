@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --deep:    #020b18;
+  --navy:    #040f1f;
+  --surface: #071628;
+  --water1:  #0096c7;
+  --water2:  #00b4d8;
+  --water3:  #48cae4;
+  --foam:    #90e0ef;
+  --gold:    #e9c46a;
+  --text:    #caf0f8;
+  --muted:   #5a8ca8;
+  --border:  rgba(0,180,216,.12);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--deep);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(0,180,216,.25);
+  color: var(--foam);
+}
+
+.clip-blade {
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+}
+
+.water-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--water1), var(--water2), var(--water1), transparent);
+  opacity: .25;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: .6; }
+  50%       { opacity: 1; text-shadow: 0 0 20px var(--water2); }
+}
+
+.glow-pulse { animation: glowPulse 3s ease-in-out infinite; }
+
+@keyframes dropFall {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+}
+
+.drop-fall { animation: dropFall 2s ease-in-out infinite; }
+
+@keyframes rippleOut {
+  to { transform: scale(8); opacity: 0; }
+}
+
+.ripple-el {
+  position: fixed;
+  border-radius: 50%;
+  border: 1px solid rgba(0,180,216,.45);
+  pointer-events: none;
+  z-index: 9999;
+  transform: scale(0);
+  animation: rippleOut 1s ease-out forwards;
 }
