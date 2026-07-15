@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Mail, Download } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const LinkedInIcon = () => (
   <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
@@ -31,6 +32,8 @@ const links = [
 ];
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className="py-20 md:py-28 px-6 md:px-16 bg-[var(--deep)]">
       <div className="max-w-5xl mx-auto">
@@ -41,7 +44,7 @@ export default function Contact() {
           className="flex items-center gap-5 mb-16"
         >
           <span className="font-[family-name:var(--font-cinzel)] text-[10px] tracking-[4px] text-[var(--water2)]">04</span>
-          <h2 className="font-[family-name:var(--font-cinzel)] text-2xl font-bold text-[var(--text)] tracking-wide">Contato</h2>
+          <h2 className="font-[family-name:var(--font-cinzel)] text-2xl font-bold text-[var(--text)] tracking-wide">{t.contact.title}</h2>
           <div className="flex-1 h-px bg-gradient-to-r from-[rgba(0,180,216,.4)] to-transparent" />
         </motion.div>
 
@@ -52,7 +55,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-[10px] tracking-[6px] uppercase text-[var(--water2)] mb-4 glow-pulse"
           >
-            Entre em Contato
+            {t.contact.eyebrow}
           </motion.p>
 
           <motion.h3
@@ -63,13 +66,13 @@ export default function Contact() {
             className="font-[family-name:var(--font-cinzel)] font-black leading-[1.15] mb-6"
             style={{ fontSize: "clamp(30px,5vw,50px)" }}
           >
-            Vamos construir{" "}
+            {t.contact.heading1}{" "}
             <span style={{
               color: "transparent",
               WebkitTextStroke: "1px var(--water2)",
               filter: "drop-shadow(0 0 16px rgba(0,180,216,.4))",
             }}>
-              algo juntos?
+              {t.contact.heading2}
             </span>
           </motion.h3>
 
@@ -80,8 +83,8 @@ export default function Contact() {
             transition={{ delay: 0.2 }}
             className="text-[14px] text-[var(--muted)] leading-[1.9] mb-12"
           >
-            Aberto a oportunidades CLT e PJ, remoto ou híbrido.<br />
-            Me manda uma mensagem — respondo rápido.
+            {t.contact.paragraph}<br />
+            {t.contact.paragraph2}
           </motion.p>
 
           <motion.div
@@ -101,7 +104,7 @@ export default function Contact() {
           </motion.div>
 
           <motion.a
-            href="/curriculo.pdf"
+            href={t.contact.resumeHref}
             download
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -112,7 +115,7 @@ export default function Contact() {
             style={{ background: "linear-gradient(135deg, var(--water1), var(--water2))" }}
           >
             <Download size={14} />
-            Baixar currículo
+            {t.contact.download}
           </motion.a>
         </div>
       </div>

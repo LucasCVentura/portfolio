@@ -1,14 +1,30 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 
-const links = [
-  { href: "#about",    label: "Sobre" },
-  { href: "#projects", label: "Projetos" },
-  { href: "#skills",   label: "Stack" },
-  { href: "#contact",  label: "Contato" },
-];
+function LanguageToggle() {
+  const { locale, setLocale } = useLanguage();
+
+  return (
+    <div className="flex items-center border border-[var(--border)] text-[10px] tracking-[1px] uppercase overflow-hidden">
+      <button
+        onClick={() => setLocale("pt")}
+        className={`px-2.5 py-1.5 transition-colors duration-200 ${locale === "pt" ? "bg-[rgba(0,180,216,.15)] text-[var(--water3)]" : "text-[var(--muted)] hover:text-[var(--water3)]"}`}
+      >
+        PT
+      </button>
+      <button
+        onClick={() => setLocale("en")}
+        className={`px-2.5 py-1.5 transition-colors duration-200 ${locale === "en" ? "bg-[rgba(0,180,216,.15)] text-[var(--water3)]" : "text-[var(--muted)] hover:text-[var(--water3)]"}`}
+      >
+        EN
+      </button>
+    </div>
+  );
+}
 
 export default function Nav() {
+  const { t } = useLanguage();
   const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
 
@@ -31,26 +47,30 @@ export default function Nav() {
       <span className="font-[family-name:var(--font-cinzel)] text-[17px] font-bold tracking-[3px] text-[var(--foam)]">
         LC<span className="text-[var(--water2)]">.</span>
       </span>
-      <ul className="hidden md:flex gap-10">
-        {links.map(l => (
-          <li key={l.href}>
-            <a
-              href={l.href}
-              className={`text-[11px] tracking-[2px] uppercase transition-colors duration-200 ${active === l.href.slice(1) ? "text-[var(--water3)]" : "text-[var(--muted)] hover:text-[var(--water3)]"}`}
-            >
-              {l.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className="hidden md:flex items-center gap-10">
+        <ul className="flex gap-10">
+          {t.nav.links.map(l => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                className={`text-[11px] tracking-[2px] uppercase transition-colors duration-200 ${active === l.href.slice(1) ? "text-[var(--water3)]" : "text-[var(--muted)] hover:text-[var(--water3)]"}`}
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <LanguageToggle />
+      </div>
       {/* Mobile links */}
-      <div className="flex md:hidden gap-5">
-        {links.map(l => (
+      <div className="flex md:hidden items-center gap-5">
+        {t.nav.links.map(l => (
           <a key={l.href} href={l.href}
             className={`text-[10px] tracking-[1px] uppercase transition-colors duration-200 ${active === l.href.slice(1) ? "text-[var(--water3)]" : "text-[var(--muted)]"}`}>
             {l.label}
           </a>
         ))}
+        <LanguageToggle />
       </div>
     </nav>
   );

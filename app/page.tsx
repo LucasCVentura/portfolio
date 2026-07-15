@@ -5,10 +5,12 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Ripple from "./components/Ripple";
+import Footer from "./components/Footer";
+import { LanguageProvider } from "./i18n/LanguageContext";
 
 export default function Home() {
   return (
-    <>
+    <LanguageProvider>
       <Ripple />
       <Nav />
       <Hero />
@@ -20,10 +22,7 @@ export default function Home() {
       <Skills />
       <div className="water-divider" />
       <Contact />
-      <footer className="px-16 py-6 border-t border-[var(--border)] flex justify-between items-center">
-        <p className="text-[12px] text-[var(--muted)]">© 2026 Lucas Coelho · Construído com TypeScript e muito café.</p>
-        <span className="font-[family-name:var(--font-cinzel)] text-[12px] tracking-[4px] text-[var(--water2)]">LC.</span>
-      </footer>
-    </>
+      <Footer />
+    </LanguageProvider>
   );
 }
